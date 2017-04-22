@@ -29,9 +29,10 @@
             android:layout_height="wrap_content"
             android:paddingBottom="8dp"
             android:alpha="0.95"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingStart="16dp"
+            android:paddingLeft="@dimen/padding_left"
+            android:paddingRight="@dimen/padding_right"
+            android:paddingEnd="@dimen/padding_right"
+            android:paddingStart="@dimen/padding_left"
             android:paddingTop="8dp"
             android:text="@string/headline_english"
             android:textColor="@android:color/white"
@@ -44,9 +45,10 @@
             android:layout_height="wrap_content"
             android:paddingBottom="8dp"
             android:alpha="0.95"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingStart="16dp"
+            android:paddingLeft="@dimen/padding_left"
+            android:paddingRight="@dimen/padding_right"
+            android:paddingEnd="@dimen/padding_right"
+            android:paddingStart="@dimen/padding_left"
             android:text="@string/title_english"
             android:textColor="@android:color/white"
             android:textSize="20sp" />
@@ -67,9 +69,10 @@
             android:layout_height="wrap_content"
             android:text="@string/subheading_english"
             android:alpha="0.6"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingStart="16dp"
+            android:paddingLeft="@dimen/padding_left"
+            android:paddingRight="@dimen/padding_right"
+            android:paddingEnd="@dimen/padding_right"
+            android:paddingStart="@dimen/padding_left"
             android:paddingTop="16dp"
             android:textColor="@android:color/black"
             android:textSize="16sp" />
@@ -79,28 +82,39 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="8dp"
-            android:alpha="0.6"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingStart="16dp"
+            android:paddingLeft="@dimen/padding_left"
+            android:paddingRight="@dimen/padding_right"
+            android:paddingEnd="@dimen/padding_right"
+            android:paddingStart="@dimen/padding_left"
             android:text="@string/description_english"
-            android:textColor="@android:color/black"
-            android:textSize="14sp" />
+            style="@style/TextDescription" />
 
         <RelativeLayout
             android:id="@+id/layoutContact"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <!--
+                For the contact information below, I have decided
+                to use the element ImageView for the images instead
+                of the DrawableLeft component of TextView.
+                That is because I had to customise the ImageView in order
+                to have the correct size and colour since I don't have
+                proper images. These were captured from the internet.
+
+                Ideally, I would work with correct sized images and
+                use the DrawableLeft attribute of TextView element.
+            -->
+
             <ImageView
                 android:id="@+id/imageCall"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:alpha=".2"
-                android:layout_marginEnd="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginStart="16dp"
+                android:layout_marginEnd="@dimen/padding_left"
+                android:layout_marginLeft="@dimen/padding_left"
+                android:layout_marginRight="@dimen/padding_right"
+                android:layout_marginStart="@dimen/padding_right"
                 android:layout_marginTop="16dp"
                 app:srcCompat="@drawable/ic_call_black_48dp"/>
 
@@ -128,7 +142,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_below="@+id/imageEmail"
                 android:alpha=".2"
-                app:srcCompat="@drawable/ic_room_black_48dp"/>
+                app:srcCompat="@drawable/ic_room_black_48dp" />
 
             <TextView
                 android:id="@+id/textCall"
@@ -137,23 +151,18 @@
                 android:layout_toRightOf="@id/imageCall"
                 android:layout_toEndOf="@id/imageCall"
                 android:layout_marginTop="18dp"
-                android:textSize="14sp"
-                android:textColor="@android:color/black"
-                android:alpha="0.6"
+                style="@style/TextDescription"
                 android:text="@string/call" />
 
             <TextView
                 android:id="@+id/textEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/imageEmail"
-                android:layout_toEndOf="@id/imageEmail"
-                android:layout_below="@id/textCall"
-                android:layout_marginTop="14dp"
-                android:textSize="14sp"
-                android:textColor="@android:color/black"
-                android:alpha="0.6"
-                android:text="@string/email" />
+                style="@style/TextDescription"
+                android:text="@string/email"
+                android:layout_alignTop="@+id/imageEmail"
+                android:layout_toRightOf="@+id/imageEmail"
+                android:layout_toEndOf="@+id/imageEmail" />
 
             <TextView
                 android:id="@+id/textLocation"
@@ -163,9 +172,7 @@
                 android:layout_toEndOf="@id/imageLocation"
                 android:layout_below="@id/textEmail"
                 android:layout_marginTop="14dp"
-                android:textSize="14sp"
-                android:textColor="@android:color/black"
-                android:alpha="0.6"
+                style="@style/TextDescription"
                 android:text="@string/location" />
 
         </RelativeLayout>
