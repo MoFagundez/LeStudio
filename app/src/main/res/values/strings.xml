@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Le Studio</string>
+    <string name="headline_english">Le Studio Sainte-Agathe</string>
+    <string name="title_english">Award winning dance academy</string>
+
+    <string name="subheading_english">Dreams coming true...</string>
+    <string name="description_english">Miss Liz wanted a space to dance.  After teaching in many studios and learning from many teachers across Canada, Le Studio was built. </string>
+
+    <string name="call">+1 (204) 123-4567</string>
+    <string name="email">letsdance@lestudiosteagathe.ca</string>
+    <string name="location">Sainte-Agathe, Manitoba</string>
+
+</resources>
